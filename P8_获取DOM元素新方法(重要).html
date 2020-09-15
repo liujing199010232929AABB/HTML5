@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P8_获取DOM元素新方法(重要)</title>
+</head>
+<body>
+    <header>
+        <div id="box" class="box"></div>
+        <div id="box2" class="box"></div>
+    </header>
+       
+    <script type="text/javascript">
+        //HTM5中的API
+        // 新的操作方法
+        // 1.获取元素的方法
+        // 获取单个元素,参数可以是我们任意的选择器。
+        // var oDiv = document.querySelector('header #box');
+        // console.log(oDiv);
+
+        var oDivs = document.querySelectorAll('div');
+        console.log(oDivs);
+        // 没有foreach方法
+        var oDivs2 = document.getElementsByTagName('div');
+        oDivs.forEach(function(ele,index){
+            console.log(ele);
+        })
+        console.log(oDivs2);
+
+        // function $(select){
+        //     return document.querySelector(select);
+        // }
+        // console.log($('#box'));
+
+
+        
+    </script>
+</body>
+</html>

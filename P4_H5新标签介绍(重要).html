@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4_H5新标签介绍(重要)</title>
+    <style type="text/css">
+        #mjj{
+            width:100px;
+            height:100px;
+            border:1px solid #ccc;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 标签规定文档的主要内容。一个文档中只有一个main元素 -->
+    <!-- H5新增的语义标签
+    1.nav标签     2.header标签   3.main标签     4.aside标签
+    5.section标签 6.article标签  7.figure标签   8.footer标签 -->
+    <header contenteditable data-name='mjj' id="box">
+        <div class="container">
+            <a href="">logo</a>
+            <nav>
+                <a href="#">python</a>
+                <a href="#">linux</a>
+                <a href="#">web前端</a>
+                <a href="#">Java</a>
+                <a href="#">Go</a>
+            </nav>
+        </div>
+    </header>
+    <h2 draggable="true" hidden>hello world</h2>
+    <div id="mjj"></div>
+
+    <!-- 标签规定文档的主要内容。一个文档中只有一个main元素。 -->
+
+    <!-- section标签定义了文档的某个区域。比如章节、头部、顶部或者文档的其他区域 -->
+    <section>
+        <h2>小猿圈重大新闻</h2>
+        <p>
+            本阶段讲解HTML5+CSS3部分，下个阶段老师开始做直播课。欢迎大家光临。小猿圈上的视频全部免费
+        </p>
+    </section>
+
+    <!-- article标签:定义页面独立的内容。必须是独立于文档的其余部分。 -->
+    <!-- 论坛帖子
+    博客文档
+    新闻故事
+    评论 -->
+
+    
+    <!-- figure标签：标签规定独立的流内容(图像、图标、照片、代码等) -->
+    <figure>
+        <img src="pic/1.jpg" alt="My 女神" width="304" height="228">
+        <figcaption>我的女神照</figcaption>
+    </figure>
+
+    <!-- footer标签 -->
+
+    <script type="text/javascript">
+        var h = document.getElementById('box');
+        console.log(h.dataset);//DOMStringMap {my: "mjj"}
+        console.log(h.dataset.name);
+        // var q = document.getElementById(h.dataset.name);
+        var q = document.querySelector('#'+h.dataset.name);
+        h.onclick = function(){ 
+            q.style.backgroundColor = 'blue';
+        }
+        
+
+        var h2 = document.getElementsByTagName('h2')[0];
+        h2.hidden = false;
+    </script>
+
+</body>
+</html>

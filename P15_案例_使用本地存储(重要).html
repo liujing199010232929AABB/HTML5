@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P15_案例_使用本地存储(重要)</title>
+</head>
+<body>
+    <div class="login">
+        <p>
+            <label for="user">用户名：</label>
+            <input type="text" name="user" id="user">
+        </p>
+        <p>
+            <label for="pwd">密码：</label>
+            <input type="password" name="pwd" id="pwd"> 
+        </p>
+        <p>
+            <span class="showName"></span>
+            <input type="button" value="login">
+            <input type="button" value="logout">
+        </p>
+    </div>
+    <script type="text/javascript">
+        window.onload = function(){
+            //1.获取标签
+            function $(select){
+                return document.querySelector(select);
+            }
+
+            isUserInfo();
+            //当前用户显示的函数
+            function isUserInfo(){
+                //(1)获取当前存储的内容，看它是否存在
+                var userInfoStr = window.localStorage.getItem('name');
+                console.log(userInfoStr);
+                var userObj = JSON.parse(userInfoStr);
+
+                if(userObj){
+                    //(2)表示用户已经登录
+                    $('.showName').style.display = 'inline-block';
+                    $('.showName').innerHTML = userObj.username;
+                    $('input[value=login]').style.display = 'none';
+                    console.log('用户登录');
+                }else{
+                    //用户没有登录
+                    console.log('用户未登录');
+                    $('.showName').style.display = 'none';
+                    $('input[value=login]').style.display = 'inline-block';
+                }
+            }
+            
+            //2.监听登录按钮的点击事件
+            $('input[value=login]').onclick = function(){
+                //3.获取用户名和密码
+                var username = $('input[name=user]').value;
+                var pwd = $('input[name=pwd]').value;
+                if(username && pwd){
+                    //4.将json对象转换成json字符串
+                    var jsonStr = JSON.stringify({
+                        "username":username,
+                        "pwd":pwd
+                    })
+                    //5.用户名和密码保存到localStorage中
+                    window.localStorage.setItem('name',jsonStr);
+
+                    //6.显示当前用户名到网页中，并且登录按钮不存在
+                    isUserInfo();
+
+                    //7.清空输入框
+                    $('input[name=username]').value = '';
+                    $('input[name=pwd]').value = '';
+
+                }
+            }
+            //退出操作
+            $('input[value=logout]').onclick = function(){
+                window.localStorage.clear();
+                isUserInfo();
+                $('input[name=username]').value = '';
+                $('input[name=pwd]').value = '';
+            }
+
+        }
+    </script>
+</body>
+</html>

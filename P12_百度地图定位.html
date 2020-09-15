@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P12_百度地图定位</title>
+</head>
+<body>
+    <script type="text/javascript">
+        console.log(navigator.__proto__);
+        if(navigator.geolocation){
+            /*地理位置服务可用*/
+            navigator.geolocation.getCurrentPosition(function(position){
+                console.log(position);
+                //coords: GeolocationCoordinates {latitude: 30.745859300000003, longitude: 120.80765590000001, altitude: null, accuracy: 159, altitudeAccuracy: null, …}timestamp: 1600155651478
+                position.coords.latitude;//经度
+                position.coords.longitude;//纬度
+            })
+
+        }else{
+            /*地理位置服务不可用*/
+        }
+    </script>
+</body>
+</html>

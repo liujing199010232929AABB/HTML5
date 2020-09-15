@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P7_智能表单(重要)</title>
+</head>
+<body>
+    <!-- form新属性 -->
+    <!-- 1.autocomplete属性:此属性规定form或input应该拥有自动完成功能 
+    当用户在自动完成域中开始输入时，浏览器应该在该域中显示填写的选项
+    当刷新网页，再次输入内容，查看效果
+    -->
+    <!-- <form action="" autocomplete="on">
+        用户名: <input type="text" name="usr_name" >
+        <input type="submit">
+    </form> -->
+
+    <!-- 2.novalidate属性:是一个布尔值，当为true时，表示规定在提交表单时，不应该验证form或input域 -->
+    <!-- <form action="" autocomplete="on" novalidate="">
+        用户名: <input type="text" name="usr_name" >
+        email: <input type="email">
+        <input type="submit">
+    </form> -->
+
+    <!-- 3.autofocus属性:在页面加载时，是否自动获得焦点 -->
+    <!-- 用户名: <input type="text" name="usr_name" autofocus> -->
+
+    <!-- 4.formaction属性:该属性用于描述表单提交的URL地址。会覆盖form元素中的action属性。该属性用于type='submit'。 -->
+    <!-- <form action="" autocomplete="on" novalidate="">
+        用户名: <input type="text" name="usr_name" autofocus>
+        email: <input type="email">
+        <input type="submit" value='提交到当前服务器'>
+        <input type="submit" formaction="http://www.baidu.com" value='提交到百度服务器'>
+    </form> -->
+
+    <!-- 5.formenctype属性:该属性描述了表单提交到服务器的数据编码(只对form表单中 method=’post‘表单)
+    第一个提交按钮已默认编码发送表单数据，第二个提交按钮以 “multipart/form-data” 编码格式发送表单数据 -->
+    <!-- <form action="" autocomplete="on" novalidate="" method='post'>
+        用户名: <input type="text" name="usr_name" autofocus>
+        email: <input type="email">
+        <input type="submit" value='提交到当前服务器'>
+        <input type="submit" formenctype="multipart/form-data" value="以 Multipart/form-data 提交">
+    </form>    -->
+
+    <!-- 6.formmethod属性:formmethod 属性定义了表单提交的方式。
+    formmethod 属性覆盖了 <form>元素的 method 属性。
+    注意: 该属性可以与 type=”submit” 和 type=”image” 配合使用。     -->
+    <!-- <form action="" autocomplete="on" novalidate="" method='get'>
+        用户名: <input type="text" name="usr_name" autofocus>
+        email: <input type="email">
+        <input type="submit" value='get提交'>
+        <input type="submit" formmethod = 'post' formenctype="multipart/form-data" value="post提交">
+    </form> -->
+    
+    <!-- 7.formnovalidate属性:novalidate属性描述了 <input> 元素在表单提交时无需被验证。formnovalidate 属性会覆盖 <form> 元素的novalidate属性. -->
+    <!-- <form action="">
+        E-mail: <input type="email" name="userid">
+        <input type="submit" value="提交">
+        <input type="submit" formnovalidate="" value="不验证提交">
+    </form>    -->
+
+    <!-- 8.formtarget属性：formtarget属性指定一个名称或一个关键字来指明表单提交数据接收后的展示。 -->
+    <!-- <form action="">
+        用户名: <input type="text">
+        密码: <input type="password">
+        <input type="submit" formtarget="_blank" value="提交到一个新的页面上"> 
+    </form> -->
+
+    <!-- 9.height和width属性
+    定义一个图像提交按钮，使用width和height属性 -->
+    <!-- <input type="image" src="pic/1.jpg" width="30" height="30"> -->
+
+     
+    <!-- 10.multiple属性：规定input元素可以选择多个值。适用于像input标签：file -->
+    <!-- 上传多个文件:
+    选择图片:<input type='file' name= 'img' multiple> -->
+
+    <!-- 11.pattern属性：描述了一个正则表达式用于验证input元素的值
+    注意：适用于以下类型input标签:text,search,url,tel,email,passworld -->
+    <!-- <form action="">
+        请输入正确的账号: <input type="text" style="width: 200px;" placeholder="由字母,数字,下划线 组成,以字母开头 4-16位" pattern="^[a-zA-Z]\w{3,15}$" title="输入的账号不合法">
+        <input type="submit" value="提交" />
+    </form>    -->
+
+    <!-- 12.required属性：规定必须在提交之前输入框不能为空。 -->
+    <!-- <form action="">
+        用户名: <input type="text" name="usrname" required>
+        <input type="submit" value="提交" >
+    </form> -->
+    
+
+    <!-- 新的input类型
+    HTML5拥有多个表单的输入类型。这些新特性提供了更好的输入控制和验证
+    新的输入类型
+    1.color : 取色
+    2.date : 日期选择器
+    3.datetime ：选择UTC时间
+    4.datetime-local: 选择一个日期和时间(无时区)
+    5.email：提交表单时。自动验证email的值是否有效
+    6.month：选择月份
+    7.number:输入数值
+    8.range：包含一定范围内数字值的输入域
+    9.search:搜索域
+    10.tel:输入电话号码字段
+    11.time:选择一个时间
+    12.url:输入包含URL地址
+    13.week:选择周和年 -->
+
+    <form action="">
+        <input type="color" value="取色器" ><br>
+        <input type="date" value="日期选择器">
+    </form>   
+
+
+</body>
+</html>

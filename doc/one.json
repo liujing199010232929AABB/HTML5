@@ -1,0 +1,20 @@
+{
+    "data":{
+        "key1":["one","two"],
+        "age":28,
+        "friends":[
+            {
+                "name":"alex",
+                "age":29
+            },
+            {
+                "name":"mjj",
+                "age":23
+            },
+            {
+                "name":"jingjing",
+                "age":23
+            }
+        ]
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P9_操作类名和自定义属性的操作</title>
+</head>
+<body>
+    <header>
+        <button>切换</button>
+        <div id="box" class="box active" data-test="name"></div>
+        <button class="btn" data-rel = "p1">按钮1</button>
+        <button class="btn" data-rel = "p2">按钮2</button>
+        <button class="btn" data-rel = "p3">按钮3</button>
+        <p id="p1" style="display:none;">1</p>
+        <p id="p2" style="display:none;">2</p>
+        <p id="p3" style="display:none;">3</p>
+    </header>
+    
+    <script type="text/javascript">
+        var oBtns = document.querySelectorAll('.btn');
+        oBtns.forEach(function(ele,i){
+            ele.onclick = function(){
+                // console.log(document.querySelector(`#${ele.dataset.rel}`));
+                document.querySelectorAll('p').forEach(function(e){
+                    e.style.display = 'none';
+                })
+                document.querySelector(`#${ele.dataset.rel}`).style.display = 'block';
+            }
+        })
+
+        var oDiv = document.querySelector('#box');
+        var oBtn = document.querySelector('button');
+        // console.log(oDiv.dataset);//DOMStringMap {test: "name"}
+        // console.log(oDiv.dataset.test);//name
+        // oDiv.dataset.age = 38;
+
+        // console.log(oDiv.__proto__);
+        // console.log(oDiv.classList);//classList为属性对象
+
+        // oDiv.classList.add('container');
+        // oDiv.classList.remove('box');
+        
+        // console.log(oDiv.classList.contains('box'));
+        
+        oBtn.onclick = function(){
+            // if(oDiv.classList.contains('list')){
+            //     oDiv.classList.toggle('list');
+            // }else{
+            //     oDiv.classList.toggle('list');
+            // }
+
+            oDiv.classList.toggle('list');
+        }
+
+
+
+    </script>
+</body>
+</html>

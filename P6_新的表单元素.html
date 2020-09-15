@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P6_新的表单元素</title>
+</head>
+<body>
+    <!-- list和datalist 中id想链接 -->
+    <form action="">
+        <input type="text" list="class">
+        <datalist id="class">
+            <option value="hello world"></option>
+            <option value="hello web"></option>
+            <option value="hello Go"></option>
+            <option value="hello python"></option>
+        </datalist>
+        <input type='submit'/>
+    </form>
+    <!-- kegen:是提供一种验证用户的可靠方法，当提交表达时，会生成两个键，一个是私钥，一个是公钥。私钥存储于客户端，公钥则被发送给服务器。公钥可用于之后验证用户的客户端证书 -->
+    <!-- <form action="hello.asp" method="get">
+        用户名: <input type="text" name="usr_name">
+        加密: <keygen name="security">
+        <input type="submit">
+    </form> -->
+
+    <!-- output:用于不同类型的输出，比如计算或脚本输出 -->
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+        <input type="range" id="a" value="50">100 +
+        <input type="number" id="b" value="50">=
+        <output name="x" for="a b"></output>
+    </form>
+
+
+</body>
+</html>

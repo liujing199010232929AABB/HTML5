@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P10_文件读取</title>
+</head>
+<body>
+    <input type="file">
+    <script type="text/javascript">
+        //1.获取元素
+        var fileInput = document.querySelector('input');
+        console.log(fileInput.__proto__);
+        //2.监听选中
+        fileInput.onchange = function(){
+            //3.获取文件
+            // console.log(this.files[0]);
+            console.log(this.files);
+            var file = this.files[0];
+            //4.创建读取器
+            var reader = new FileReader();
+            // console.log(reader);
+            // 1.readAsBinaryString: 将文件读取为二进制编码
+            // 2.readAsDataURL: 将文件读取为DataURL
+            // 3.readAsText:将文件读取为文本
+
+            //5.开始读取
+            reader.readAsText(file);//undefined
+            //6.监听文件的读取状态
+            reader.onload = function(){
+                console.log(reader.result);//读取结果都会存到result属性中
+            }
+
+        }
+    </script>
+</body>
+</html>
